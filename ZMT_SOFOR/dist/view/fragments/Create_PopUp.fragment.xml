@@ -1,0 +1,93 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog title="Şoför Yeni Kayıt" id="ListDialog" afterClose="onAfterClose" horizontalScrolling="true">
+		<content>
+				<f:Form id="FormDisplay2" editable="true" class="isReadonly">
+					<f:layout>
+						<f:ResponsiveGridLayout labelSpanL="4" labelSpanM="4" emptySpanL="4" emptySpanM="3" columnsL="4" columnsM="3"/>
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer id="formContainer2" expandable="true">
+							<f:formElements id="formElements2">
+								<f:FormElement label="Şöfor Tam Adı">
+									<f:fields>
+										<Input id="idAd" value="{/Soforad}" type="Text"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Şöfor Ad">
+									<f:fields>
+										<Input id="idAd2" value="{/Adi}" type="Text"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Şöfor Soyad">
+									<f:fields>
+										<Input id="idSAd" value="{/Soyadi}" type="Text"/>
+									</f:fields>
+								</f:FormElement>
+<!--								<f:FormElement label="Doğum Yılı">
+									<f:fields>
+										<DatePicker id="idDogY"/>
+									</f:fields>
+								</f:FormElement>-->
+								<f:FormElement label="Ehliyet No">
+									<f:fields>
+										<Input id="idEhNo" value="{/Ehliyetno}" type="Number" maxLength="11"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Ehliyet Seri No">
+									<f:fields>
+										<Input id="idEhSNo" value="{/EhliyetSno}" type="Number" maxLength="11"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Ehliyet Ülke">
+									<f:fields>
+										<Input id="idEhU" value="{/EhliyetUlke}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Ehliyet Şehir">
+									<f:fields>
+										<Input id="idEhSh" value="{/EhliyetSehir}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Telefon No">
+									<f:fields>
+										<Input id="idCepT" value="{/Ceptel}" type="Number" maxLength="11"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Plaka">
+									<f:fields>
+										<Input id="idPlaka" value="{/Plaka}" type="Number" maxLength="11"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Pasaport No">
+									<f:fields>
+										<Input id="idPas" value="{/Pasaportno}" type="Number" maxLength="11"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Sürücü Belge Tipi">
+									<f:fields>
+										<Input id="idSbtip" value="{/Sbtip}" type="Number" maxLength="11"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="Adres">
+									<f:fields>
+										<Input id="idAdres" value="{/Adres}" type="Number" maxLength="11"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="TC Kimlik No">
+									<f:fields>
+										<Input id="idTCKML" value="{/Tckml}" type="Number" maxLength="11"/>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+				</content>
+		<beginButton>
+			<Button text="Save" press="onSaveFragments"/>
+		</beginButton>
+		<endButton>
+			<Button text="Close" press="onCloseFragments"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

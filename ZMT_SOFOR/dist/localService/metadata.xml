@@ -1,0 +1,82 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZMT_SOFOR_SRV" xml:lang="tr" sap:schema-version="1">
+            <EntityType Name="Sofor" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Soforid"/>
+                </Key>
+                <Property Name="Soforid" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Sofor Id" sap:updatable="false"/>
+                <Property Name="Soforad" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Şoför Adı"/>
+                <Property Name="Adi" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="İsim" sap:filterable="false"/>
+                <Property Name="Soyadi" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Soyisim" sap:filterable="false"/>
+                <Property Name="Dogumyili" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Doğum Yılı" sap:filterable="false"/>
+                <Property Name="Ehliyetno" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Ehliyet No" sap:filterable="false"/>
+                <Property Name="EhliyetUlke" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Ülke" sap:filterable="false"/>
+                <Property Name="EhliyetSehir" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="İl" sap:filterable="false"/>
+                <Property Name="EhliyetSno" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="Ehliyet Seri No" sap:filterable="false"/>
+                <Property Name="Ceptel" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Cep telefonu" sap:filterable="false"/>
+                <Property Name="Plaka" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Plaka" sap:filterable="false"/>
+                <Property Name="Tckml" Type="Edm.String" Nullable="false" MaxLength="11" sap:label="T.C. Kimlik No"/>
+                <Property Name="Pasaportno" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Pasaport No" sap:filterable="false"/>
+                <Property Name="Sbtip" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Sürücü Belge Tipi" sap:filterable="false"/>
+                <Property Name="Adres" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Şoför Adresi" sap:filterable="false"/>
+                <Property Name="Erdat" Type="Edm.DateTime" Precision="7" sap:label="Yaratma trh." sap:filterable="false"/>
+                <Property Name="Erzet" Type="Edm.Time" Precision="0" sap:label="Saat" sap:filterable="false"/>
+                <Property Name="Ernam" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Yaratan" sap:filterable="false"/>
+                <Property Name="Aedat" Type="Edm.DateTime" Precision="7" sap:label="Dğşk.tarihi" sap:filterable="false"/>
+                <Property Name="Aezet" Type="Edm.Time" Precision="0" sap:label="Değişiklik sa." sap:filterable="false"/>
+                <Property Name="Aenam" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Değiştiren" sap:filterable="false"/>
+                <Property Name="Sorun" Type="Edm.Boolean" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dogrulandi" Type="Edm.String" MaxLength="1" sap:label="Seçme kutusu"/>
+            </EntityType>
+            <EntityType Name="SoforSH" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SOFORID"/>
+                </Key>
+                <Property Name="SOFORID" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Sofor Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SOFORAD" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Şoför Adı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Sofor1" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Soforid"/>
+                </Key>
+                <Property Name="Soforid" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Sofor Id" sap:updatable="false"/>
+                <Property Name="Soforad" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Şoför Adı"/>
+                <Property Name="Adi" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="İsim" sap:filterable="false"/>
+                <Property Name="Soyadi" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Soyisim" sap:filterable="false"/>
+                <Property Name="Dogumyili" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Doğum Yılı" sap:filterable="false"/>
+                <Property Name="Ehliyetno" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Ehliyet No" sap:filterable="false"/>
+                <Property Name="EhliyetUlke" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Ülke" sap:filterable="false"/>
+                <Property Name="EhliyetSehir" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="İl" sap:filterable="false"/>
+                <Property Name="EhliyetSno" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="Ehliyet Seri No" sap:filterable="false"/>
+                <Property Name="Ceptel" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Cep telefonu" sap:filterable="false"/>
+                <Property Name="Plaka" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Plaka" sap:filterable="false"/>
+                <Property Name="Tckml" Type="Edm.String" Nullable="false" MaxLength="11" sap:label="T.C. Kimlik No" sap:filterable="false"/>
+                <Property Name="Pasaportno" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Pasaport No" sap:filterable="false"/>
+                <Property Name="Sbtip" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Sürücü Belge Tipi" sap:filterable="false"/>
+                <Property Name="Adres" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Şoför Adresi" sap:filterable="false"/>
+                <Property Name="Erdat" Type="Edm.DateTime" Precision="7" sap:label="Yaratma trh." sap:filterable="false"/>
+                <Property Name="Erzet" Type="Edm.Time" Precision="0" sap:label="Saat" sap:filterable="false"/>
+                <Property Name="Ernam" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Yaratan" sap:filterable="false"/>
+                <Property Name="Aedat" Type="Edm.DateTime" Precision="7" sap:label="Dğşk.tarihi" sap:filterable="false"/>
+                <Property Name="Aezet" Type="Edm.Time" Precision="0" sap:label="Değişiklik sa." sap:filterable="false"/>
+                <Property Name="Aenam" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="Değiştiren" sap:filterable="false"/>
+                <Property Name="Sorun" Type="Edm.Boolean" Nullable="false" sap:label="Gösterge" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dogrulandi" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Seçme kutusu" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZMT_SOFOR_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SoforSet" EntityType="ZMT_SOFOR_SRV.Sofor" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SoforSHSet" EntityType="ZMT_SOFOR_SRV.SoforSH" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Sofor1Set" EntityType="ZMT_SOFOR_SRV.Sofor1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZMT_SOFOR_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZMT_SOFOR_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

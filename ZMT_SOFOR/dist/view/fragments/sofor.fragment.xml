@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<SelectDialog title="Şoför Arama"
+	items="{/SoforSHSet}" 
+	liveChange="HandleSoforSearchHelp" 
+	confirm="HandleSoforHelpClose"
+	cancel="HandleSoforHelpClose">
+		<StandardListItem title="{SOFORID} - {SOFORAD} "/>
+	</SelectDialog>
+</core:FragmentDefinition>

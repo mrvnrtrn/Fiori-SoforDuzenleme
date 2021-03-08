@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m"  xmlns:u="sap.ui.unified">
+	 <u:Shell
+			id="myShell">
+			<u:headItems>
+				<u:ShellHeadItem
+					tooltip="Home"
+					icon="sap-icon://home-share"
+					visible="true"
+					press="handlePressHome" />
+			</u:headItems>
+			<u:headEndItems>
+<!--				<u:ShellHeadItem
+					icon="sap-icon://log"
+					tooltip="Logoff"
+					press="handleLogoffPress" />-->
+			</u:headEndItems>
+			<u:user>
+				<u:ShellHeadUserItem
+					image="sap-icon://supplier"
+					username="Mervenur Turan"
+					press="handleUserItemPressed" />
+			</u:user>
+<!--			<u:search>
+				<SearchField
+					search="handleSearchPressed"/>
+			</u:search>-->
+			<u:paneContent>
+				<Text text="Lorem ipsum" />
+			</u:paneContent>
+		</u:Shell>
+</core:FragmentDefinition>

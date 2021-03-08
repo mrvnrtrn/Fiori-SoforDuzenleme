@@ -1,0 +1,163 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:c="sap.ui.core" xmlns:t="sap.ui.table" xmlns:m="sap.m"
+	xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout" xmlns:scrollbar="sap.m.ScrollContainer"
+	xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable" controllerName="com.tosyali.sofor03ZMT_SOFOR03.controller.View1" displayBlock="true">
+	<core:Fragment fragmentName="com.tosyali.sofor03ZMT_SOFOR03.view.fragments.navBar" type="XML"/>
+	<App id="rootViewId">
+		<pages>
+			<Page title="Şoför Kayıtları" busy="{viewModel>/busy}" enableScrolling="true" floatingFooter="true" showFooter="false" showSubHeader="false">
+				<content>
+					<smartFilterBar:SmartFilterBar id="smartFilterBar" persistencyKey="SmartFilterPKey">
+						<smartFilterBar:controlConfiguration>
+							<smartFilterBar:ControlConfiguration key="Soforid" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true"/>
+						</smartFilterBar:controlConfiguration>
+						<smartFilterBar:content>
+							<Input xmlns="sap.m" id="SoforIDinput" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="openSoforSH" width="100%"
+								fieldWidth="80%"/>
+							<HBox>
+								<RadioButtonGroup id="rbg1" width="100%" columns="4" select=".onChangeRadio" selectedIndex="{selected>rbg1}">
+									<RadioButton xmlns="sap.m" id="RB1-1" text="Sorunlu Kayıtları Listele" selected="true"/>
+									<RadioButton xmlns="sap.m" id="RB1-2" text="Tüm Kayıtları Listele" selected="false"/>
+								</RadioButtonGroup>
+							</HBox>
+						</smartFilterBar:content>
+					</smartFilterBar:SmartFilterBar>
+					<smartTable:SmartTable id="smartTable_ResponsiveTable" tableBindingPath="{path: 'soforKod>/'}" smartFilterId="smartFilterBar"
+						editable="true" entitySet="SoforSet" useTablePersonalisation="true" header="Şoför Kayıtları" useVariantManagement="true" showRowCount="true"
+						persistencyKey="SmartTablePKey" backgroundDesign="Translucent" demandPopin="true">
+						<OverflowToolbar design="Transparent">
+							<CheckBox text="Tümünü seç" select=".selectAll"/>
+							<Button id="addButton" icon="sap-icon://add" text="Yeni Kayıt Ekle" type="Transparent" press=".OnPressYeniKayitEkle"/>
+							<Button icon="sap-icon://delete" text="Sil" type="Transparent" press="onPressBatchDelete"/>
+							<Button icon="sap-icon://mirrored-task-circle" text="Güncelle" press="Update"/>
+						</OverflowToolbar>
+						<Table showNoData="false">
+						<columns>
+							<Column>
+								<Text text="İşlemler"/>
+							</Column>
+							<Column>
+								<Text text="Şoför İD"/>
+							</Column>
+							<Column>
+								<Text text="Şoför ADI"/>
+							</Column>
+							<Column>
+								<Text text="Şoför Soyadı"/>
+							</Column>
+							<Column>
+								<Text text="TC Kimlik No"/>
+							</Column>
+						</columns>
+					</Table>
+					<ScrollContainer height="100%" width="100%" vertical="true" focusable="true">
+						<Table items="{soforKod>/}" id="idSoforTable" growing="true" growingThreshold="10">
+							<columns>
+								<Column/>
+								<Column/>
+								<Column/>
+								<Column/>
+								<Column/>
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<CheckBox id="ch1" text="Satır Seç" selected="false" select="onEdit"/>
+										<ObjectIdentifier title="{soforKod>Soforid}" text="{soforKod>Soforad}"/>
+										<Input id="idAd1" value="{soforKod>Soforad}" type="Text" enabled="false"/>
+										<Input id="idSad1" value="{soforKod>Soyadi}" type="Text" enabled="false"/>
+										<Input id="idTckml1" value="{soforKod>Tckml}" type="Text" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</ScrollContainer>
+					</smartTable:SmartTable>
+					<!--enableScrolling="false"-->
+					<!--				<subHeader>
+					<OverFlowToolbar width="100%">
+						<SearchField width="100%" search="onSearch"/>
+					</OverFlowToolbar>
+				</subHeader>-->
+					<!--					<l:VerticalLayout width="100%">
+						<fb:FilterBar reset="onReset" search="onSearch" showRestoreButton="true" showClearButton="true">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem groupName="__$INTERNAL$" name="A" label="Şoför Arama" partOfCurrentVariant="true" visibleInFilterBar="true">
+									<fb:control>
+										<Input xmlns="sap.m" id="SoforIDinput" showValueHelp="true" valueHelpOnly="true" valueHelpRequest="openSoforSH" width="100%"
+											fieldWidth="80%"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem groupName="__$INTERNAL$b" name="b" label="Kayıt Seçim" partOfCurrentVariant="true" visibleInFilterBar="true">
+									<fb:control>
+										<HBox>
+											<RadioButtonGroup id="rbg1" columns="4" class="sapUiMediumMarginBottom" select=".onChangeRadio" selectedIndex="{selected>rbg1}">
+												<RadioButton id="RB1-1" text="Sorunlu Kayıtları Listele" selected="true"/>
+												<RadioButton id="RB1-2" text="Tüm Kayıtları Listele" selected="false"/>
+											</RadioButtonGroup>
+										</HBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+					</l:VerticalLayout>-->
+					<!--	<Table showNoData="false">
+						<headerToolbar>
+							<OverflowToolbar id="otbSubheader">
+								<CheckBox text="Tümünü seç" select=".selectAll"/>
+								<Button id="addButton" icon="sap-icon://add" text="Yeni Kayıt Ekle" type="Transparent" press=".OnPressYeniKayitEkle"/>
+								<Button icon="sap-icon://delete" text="Sil" type="Transparent" press="onPressBatchDelete"/>
+								<Button icon="sap-icon://mirrored-task-circle" text="Güncelle" press="Update"/>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<Text text="İşlemler"/>
+							</Column>
+							<Column>
+								<Text text="Şoför İD"/>
+							</Column>
+							<Column>
+								<Text text="Şoför ADI"/>
+							</Column>
+							<Column>
+								<Text text="Şoför Soyadı"/>
+							</Column>
+							<Column>
+								<Text text="TC Kimlik No"/>
+							</Column>
+						</columns>
+					</Table>
+					<ScrollContainer height="100%" width="100%" vertical="true" focusable="true">
+						<Table items="{soforKod>/}" id="idSoforTable" growing="true" growingThreshold="10">
+							<columns>
+								<Column/>
+								<Column/>
+								<Column/>
+								<Column/>
+								<Column/>
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<CheckBox id="ch1" text="Satır Seç" selected="false" select="onEdit"/>
+										<ObjectIdentifier title="{soforKod>Soforid}" text="{soforKod>Soforad}"/>
+										<Input id="idAd1" value="{soforKod>Soforad}" type="Text" enabled="false"/>
+										<Input id="idSad1" value="{soforKod>Soyadi}" type="Text" enabled="false"/>
+										<Input id="idTckml1" value="{soforKod>Tckml}" type="Text" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</ScrollContainer>-->
+				</content>
+				<footer>
+					<Toolbar>
+						<!--	<Button icon="sap-icon://alert" visible="{path:'messages>/numberOfMessages',formatter:'.myFormatter.visibleMessagePopover'}"
+							text="{messages>/numberOfMessages}" press="onPressMessagePopover"></Button>-->
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
